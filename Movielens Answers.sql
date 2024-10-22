@@ -29,7 +29,7 @@ INNER JOIN genres ON genres_movies.genre_id = genres.id
 WHERE genres.name = "Sci-Fi" AND users.age = 24 AND users.gender = "M" and rating = 5;
 
 -- Q4: List the unique titles of each of the movies released on the most popular release day.
-SELECT title FROM movies 
+SELECT DISTINCT title FROM movies 
 WHERE release_date = (SELECT release_date FROM movies 
 					  GROUP BY release_date 
 					  ORDER BY COUNT(release_date) DESC
