@@ -124,3 +124,12 @@ WHERE category_id = (SELECT category_id FROM film
 						GROUP BY category_id
 						ORDER BY COUNT(category_id) DESC
 						LIMIT 1);
+                        
+SELECT name FROM category
+INNER JOIN film_category ON category.category_id = film_category.category_id
+INNER JOIN film on film_category.film_id = film.film_id
+GROUP BY film_category.category_id
+ORDER BY COUNT(film_category.category_id) DESC
+LIMIT 1
+						
+                        
