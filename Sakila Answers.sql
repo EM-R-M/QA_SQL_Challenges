@@ -58,6 +58,12 @@ WHERE actor_id = (SELECT actor_id FROM film_actor
 						GROUP BY actor_id
 						ORDER BY COUNT(actor_id) DESC
 						LIMIT 1);
+                        
+SELECT first_name, last_name FROM actor
+INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id
+GROUP BY film_actor.actor_id
+ORDER BY COUNT(film_actor.actor_id) DESC
+LIMIT 1;
 
 -- Q14: When is 'Academy Dinosaur' due?
 SELECT DATE_ADD(rental_date, INTERVAL rental_duration DAY)  AS due_date FROM rental
