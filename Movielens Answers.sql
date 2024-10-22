@@ -18,7 +18,7 @@ WHERE ratings.movie_id IN (SELECT movie_id FROM ratings
 													GROUP BY movie_id
 													) AS wanted_average)
                            ORDER BY AVG(rating) ASC)
-                           GROUP BY title;
+GROUP BY title;
 			
 -- Q3: List the unique records for Sci-Fi movies where male 24-year-old students have given 5-star ratings.
 SELECT DISTINCT movies.title, genres.name, ratings.rating, users.age, users.gender FROM ratings
