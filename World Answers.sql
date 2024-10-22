@@ -59,8 +59,11 @@ LIMIT 5;
 
 -- Q12: List the names and country codes of every country with Elizabeth II as its Head of State. 
 -- 		You will need to fix the mistake first!
+UPDATE country 
+SET HeadOfState = "Elizabeth II"
+WHERE HeadofState = "Elisabeth II";
 SELECT Name, Code FROM country
-WHERE HeadOfState = "Elisabeth II";
+WHERE HeadOfState = "Elizabeth II";
 
 -- Q13: List the top ten countries with the smallest population-to-area ratio. 
 --  	Discard any countries with a ratio of 0.
